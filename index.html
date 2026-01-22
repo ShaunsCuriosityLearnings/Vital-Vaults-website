@@ -1,0 +1,861 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vitals Vault - Your lifelong health memory</title>
+    <meta
+      name="description"
+      content="Organize your BP, HR, sleep, sugar, and reports into a clean doctor-ready timeline. Coming soon to iOS & Android."
+    />
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon" />
+
+    <!-- Open Graph / Facebook -->
+    <meta
+      property="og:title"
+      content="Vitals Vault - Your lifelong health memory"
+    />
+    <meta
+      property="og:description"
+      content="Track BP, HR, sleep, sugar in one dashboard. 30-day doctor reports in one tap. Designed with doctors, owned by you."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vitalsvault.com" />
+    <!--Replace with the current website url-->
+    <meta property="og:image" content="./assets/og-image.jpg" />
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./css/tailwind-build.css" />
+    <link rel="stylesheet" href="css/index.css" />
+
+    <!-- Google Fonts: Inter for headings, Roboto for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+      integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Floating WhatsApp Button -->
+  </head>
+
+  <body class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-[#fff]">
+    <!-- Header - Content only changed -->
+    <header
+      class="tw-absolute tw-top-0 tw-z-20 tw-flex tw-h-[80px] tw-w-full tw-bg-opacity-0 tw-px-[5%] max-lg:tw-mr-auto max-lg:tw-px-4 lg:tw-justify-around"
+    >
+      <!-- LOGO -->
+      <a class="tw-flex tw-items-center tw-h-full" href="">
+        <img
+          src="./assets/images/LOGONOR.png"
+          alt="logo"
+          class="tw-h-[90px] tw-w-[90px] tw-object-fill"
+        />
+      </a>
+
+      <!-- EVERYTHING ELSE UNTOUCHED -->
+      <div
+        class="collapsible-header animated-collapse max-lg:tw-shadow-md"
+        id="collapsed-header-items"
+      >
+        <div
+          class="tw-flex tw-h-full tw-w-max tw-gap-5 tw-text-base tw-text-black max-lg:tw-mt-[30px] max-lg:tw-flex-col max-lg:tw-place-items-end max-lg:tw-gap-5 lg:tw-mx-auto lg:tw-place-items-center"
+        >
+          <a class="header-links" href="#about us">About Us</a>
+          <a class="header-links" href="#why-it-matters">Why It Matters</a>
+          <a class="header-links" href="#features">Features</a>
+        </div>
+
+        <div
+          class="tw-mx-4 tw-flex tw-place-items-center tw-gap-[20px] tw-text-base max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center"
+        >
+          <a
+            href="#contact"
+            aria-label="Contact us"
+            class="tw-flex tw-h-[40px] tw-place-items-center tw-gap-2 tw-rounded-full tw-bg-black tw-p-1 tw-pl-4 tw-text-white"
+          >
+            <span>Contact us</span>
+
+            <div
+              class="tw-flex tw-h-[30px] tw-w-[30px] tw-place-content-center tw-place-items-center tw-rounded-full tw-bg-primary tw-font-semibold tw-text-black"
+            >
+              <i class="bi bi-chat-dots"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <button
+        class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl tw-text-black lg:tw-hidden"
+        onclick="toggleHeader()"
+        aria-label="menu"
+        id="collapse-btn"
+      ></button>
+    </header>
+
+    <!-- Hero Section - Content only changed, exact image structure preserved -->
+
+    <section
+      id="about us"
+      class="tw-relative tw-flex tw-min-h-[100vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-overflow-hidden max-lg:tw-p-4 max-md:tw-mt-[50px]"
+      id="hero"
+    >
+      <div
+        class="tw-flex tw-h-full tw-min-h-[100vh] tw-w-full tw-place-content-center tw-gap-6 tw-p-[5%] max-xl:tw-place-items-center max-lg:tw-flex-col"
+      >
+        <div class="tw-flex tw-flex-col tw-place-content-center">
+          <div
+            class="tw-flex tw-flex-wrap tw-text-6xl tw-font-semibold tw-uppercase tw-leading-[80px] max-lg:tw-text-4xl max-md:tw-leading-snug"
+          >
+            <span class="reveal-hero-text">Your lifelong </span>
+            <br />
+            <span class="reveal-hero-text">health memory, </span>
+            <br />
+            <span class="reveal-hero-text">in one place.</span>
+          </div>
+          <div
+            class="reveal-hero-text tw-mt-2 tw-max-w-[450px] tw-p-2 tw-text-justify max-lg:tw-max-w-full"
+          >
+            Vitals Vault organizes your blood pressure, heart rate, sleep,
+            sugar, and reports into a clean, doctor-ready timeline. No more
+            scattered files, screenshots, or forgotten advice.
+          </div>
+
+          <div
+            class="reveal-hero-text tw-mt-4 tw-flex tw-place-items-center tw-gap-4 tw-overflow-hidden tw-p-2"
+          >
+            <div
+              class="tw-bg-gray-100 tw-px-4 tw-py-2 tw-rounded-full tw-text-sm tw-font-medium tw-text-gray-700 tw-mr-4"
+            >
+              Coming soon to iOS & Android
+            </div>
+            <a class="tw-h-[50px] tw-max-w-[150px]" href="">
+              <img
+                src="./assets/images/brand-logos/app-store-badge.png"
+                alt="App Store"
+                class="tw-h-full tw-w-full"
+                srcset=""
+              />
+            </a>
+            <a class="tw-h-[50px] tw-max-w-[150px]" href="">
+              <img
+                src="./assets/images/brand-logos/google-play-badge.png"
+                alt="Google Play"
+                class="tw-h-full tw-w-full"
+                srcset=""
+              />
+            </a>
+          </div>
+
+          <!-- Updated Signup Card Form -->
+          <!-- HERO WAITLIST FORM -->
+          <div class="reveal-hero-text tw-mt-8 tw-w-full tw-max-w-[450px]">
+            <div
+              class="tw-bg-white tw-border tw-border-gray-300 tw-rounded-lg tw-shadow-md tw-p-6"
+            >
+              <h3
+                class="tw-text-xl tw-font-semibold tw-text-black tw-text-center tw-mb-4"
+              >
+                Join the Waitlist and Get Early Access
+              </h3>
+
+              <form
+                id="waitlistMiniForm"
+                class="waitlist-form tw-flex tw-flex-col tw-gap-3 tw-w-full"
+              >
+                <!-- Email -->
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="Enter your email"
+                  class="tw-w-full tw-rounded-lg tw-border tw-border-gray-300 tw-px-4 tw-py-3 tw-text-sm tw-outline-none"
+                />
+
+                <!-- Phone -->
+                <input
+                  type="tel"
+                  name="phone"
+                  required
+                  placeholder="Phone (+91)"
+                  class="tw-w-full tw-rounded-lg tw-border tw-border-gray-300 tw-px-4 tw-py-3 tw-text-sm tw-outline-none"
+                />
+
+                <!-- Submit -->
+                <button
+                  type="submit"
+                  class="tw-rounded-lg tw-bg-primary tw-py-3 tw-text-sm tw-font-semibold tw-text-black tw-transition-colors"
+                >
+                  Join Waitlist
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="tw-flex tw-w-full tw-max-w-[50%] tw-place-content-center tw-place-items-center tw-overflow-hidden max-lg:tw-max-w-[unset]"
+        >
+          <div
+            class="tw-relative tw-flex tw-max-h-[580px] tw-min-h-[450px] tw-min-w-[350px] tw-max-w-[650px] tw-overflow-hidden max-lg:tw-h-fit max-lg:tw-max-h-[320px] max-lg:tw-min-h-[180px] max-lg:tw-w-[320px] max-lg:tw-min-w-[320px]"
+          >
+            <img
+              src="./assets/images/vital heroo.png"
+              alt="Vitals Vault App"
+              class="reveal-hero-img tw-z-[1] tw-h-full tw-w-full tw-object-contain"
+            />
+
+            <div
+              class="tw-absolute tw-bottom-0 tw-left-1/2 tw-h-[80%] tw-w-[80%] tw--translate-x-1/2 tw-rounded-full tw-bg-gray-100"
+              id="hero-img-bg"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- "Why It Matters" - 3 Problem Cards (exact structure preserved) -->
+    <section
+      id="why-it-matters"
+      class="tw-relative tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-6"
+      id="why-it-matters"
+    >
+      <h2
+        class="tw-text-3xl lg:tw-text-4xl tw-font-bold tw-text-center tw-mb-12 tw-text-gray-900 reveal-up"
+      >
+        Healthcare data today is fragmented and episodic.
+      </h2>
+      <div
+        class="reveal-up tw-flex tw-min-h-[300px] tw-w-full tw-max-w-[80%] tw-place-items-center tw-justify-around tw-gap-8 tw-rounded-xl tw-bg-gray-50 tw-p-4 max-lg:tw-max-w-full max-md:tw-flex-col"
+      >
+        <!-- Card 1: Vitals scattered -->
+        <div class="tw-flex tw-flex-col tw-place-items-center tw-gap-4">
+          <h3 class="tw-text-xl tw-font-bold tw-text-center tw-mb-2">
+            Vitals scattered across apps
+          </h3>
+          <p class="tw-text-base tw-text-gray-600 tw-text-center">
+            BP machine, smart ring, lab reports – nothing talks to each other.
+          </p>
+        </div>
+
+        <!-- Card 2: Patients forget -->
+        <div class="tw-flex tw-flex-col tw-place-items-center tw-gap-4">
+          <h3 class="tw-text-xl tw-font-bold tw-text-center tw-mb-2">
+            Patients forget what doctors say
+          </h3>
+          <p class="tw-text-base tw-text-gray-600 tw-text-center">
+            No structured memory of past visits, symptoms, and advice.
+          </p>
+        </div>
+
+        <!-- Card 3: Doctors lack context -->
+        <div class="tw-flex tw-flex-col tw-place-items-center tw-gap-4">
+          <h3 class="tw-text-xl tw-font-bold tw-text-center tw-mb-2">
+            Doctors lack context in 10-minute consults
+          </h3>
+          <p class="tw-text-base tw-text-gray-600 tw-text-center">
+            No quick 30-day view of vitals, sleep, and sugar.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- “How Vitals Vault Helps” - Screens 3-7 (5 Feature Rows, Alternating Layouts) -->
+    <section id="features" class="tw-py-24 px-4 sm:px-6 lg:px-8">
+      <div class="tw-max-w-7xl tw-mx-auto">
+        <h2
+          class="tw-text-3xl lg:tw-text-4xl tw-font-bold tw-text-center tw-mb-20 tw-text-gray-900"
+        >
+          What Vitals Vault does for you.
+        </h2>
+
+        <!-- 1. ONBOARDING -->
+        <section
+          class="tw-relative tw-flex tw-w-full tw-flex-col tw-overflow-hidden tw-p-6"
+        >
+          <div
+            class="reveal-up tw-flex tw-min-h-[60vh] tw-place-content-center tw-place-items-center tw-gap-[10%] max-lg:tw-flex-col max-lg:tw-gap-10"
+          >
+            <div class="tw-mt-6 tw-flex tw-max-w-[450px] tw-flex-col tw-gap-4">
+              <h3 class="tw-text-4xl tw-font-bold">
+                Personalized health setup.
+              </h3>
+
+              <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-3">
+                <h4 class="tw-text-xl tw-font-medium">
+                  <i class="bi bi-check-all tw-text-blue-500"></i> Build your
+                  health profile
+                </h4>
+                <span class="tw-text-lg tw-text-gray-600">
+                  Capture age, gender, conditions, and lifestyle factors.
+                </span>
+              </div>
+
+              <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-3">
+                <h4 class="tw-text-xl tw-font-medium">
+                  <i class="bi bi-check-all tw-text-blue-500"></i> Connect
+                  wearables
+                </h4>
+                <span class="tw-text-lg tw-text-gray-600">
+                  Clear summary of today’s health signals.
+                </span>
+              </div>
+            </div>
+            <div class="tw-flex">
+              <div class="tw-h-[450px] tw-w-[300px]">
+                <img
+                  src="./assets/images/introduction.png"
+                  class="tw-h-full tw-w-full tw-object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. DASHBOARD -->
+        <section
+          class="tw-relative tw-flex tw-w-full tw-flex-col tw-overflow-hidden tw-p-6"
+        >
+          <div
+            class="reveal-up tw-flex tw-min-h-[60vh] tw-place-content-center tw-place-items-center tw-gap-[10%] max-lg:tw-flex-col max-lg:tw-gap-10"
+          >
+            <div class="tw-flex">
+              <div class="tw-h-[450px] tw-w-[300px]">
+                <img
+                  src="./assets/images/dashboard.png"
+                  class="tw-h-full tw-w-full tw-object-contain"
+                />
+              </div>
+            </div>
+            <div class="tw-mt-6 tw-flex tw-max-w-[450px] tw-flex-col tw-gap-4">
+              <h3 class="tw-text-4xl tw-font-bold">One-glance dashboard.</h3>
+
+              <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-3">
+                <h4 class="tw-text-xl tw-font-medium">
+                  <i class="bi bi-check-all tw-text-blue-500"></i> All vitals
+                  instantly
+                </h4>
+                <span class="tw-text-lg tw-text-gray-600">
+                  Heart rate, sleep, energy score, and steps in one view.
+                </span>
+              </div>
+
+              <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-3">
+                <h4 class="tw-text-xl tw-font-medium">
+                  <i class="bi bi-check-all tw-text-blue-500"></i> Daily insight
+                </h4>
+                <span class="tw-text-lg tw-text-gray-600">
+                  Clear summary of today’s health signals.
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. SMART RING METRICS -->
+        <section
+          class="tw-relative tw-flex tw-w-full tw-flex-col tw-overflow-hidden tw-p-6"
+        >
+          <div
+            class="reveal-up tw-flex tw-min-h-[60vh] tw-place-content-center tw-place-items-center tw-gap-[10%] max-lg:tw-flex-col max-lg:tw-gap-10"
+          >
+            <div class="tw-mt-6 tw-flex tw-max-w-[450px] tw-flex-col tw-gap-4">
+              <h3 class="tw-text-4xl tw-font-bold">
+                Wearable-aware monitoring.
+              </h3>
+
+              <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-3">
+                <h4 class="tw-text-xl tw-font-medium">
+                  <i class="bi bi-check-all tw-text-blue-500"></i> Smart ring
+                  signals
+                </h4>
+                <span class="tw-text-lg tw-text-gray-600">
+                  HRV, sleep stages, temperature, and recovery metrics.
+                </span>
+              </div>
+
+              <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-3">
+                <h4 class="tw-text-xl tw-font-medium">
+                  <i class="bi bi-check-all tw-text-blue-500"></i> Resting &
+                  activity status
+                </h4>
+                <span class="tw-text-lg tw-text-gray-600">
+                  See how your body responds throughout the day.
+                </span>
+              </div>
+            </div>
+            <div class="tw-flex">
+              <div class="tw-h-[450px] tw-w-[300px]">
+                <img
+                  src="./assets/images/smart ring.png"
+                  class="tw-h-full tw-w-full tw-object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. HEALTH TRENDS -->
+        <section
+          class="tw-relative tw-flex tw-w-full tw-flex-col tw-overflow-hidden tw-p-6"
+        >
+          <div
+            class="reveal-up tw-flex tw-min-h-[60vh] tw-place-content-center tw-place-items-center tw-gap-[10%] max-lg:tw-flex-col max-lg:tw-gap-10"
+          >
+            <div class="tw-flex">
+              <div class="tw-h-[450px] tw-w-[300px]">
+                <img
+                  src="./assets/images/vitals monitoring.png"
+                  class="tw-h-full tw-w-full tw-object-contain"
+                />
+              </div>
+            </div>
+            <div class="tw-mt-6 tw-flex tw-max-w-[450px] tw-flex-col tw-gap-4">
+              <h3 class="tw-text-4xl tw-font-bold">
+                Health trends that explain why.
+              </h3>
+
+              <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-3">
+                <h4 class="tw-text-xl tw-font-medium">
+                  <i class="bi bi-check-all tw-text-blue-500"></i> 7, 30 &
+                  90-day views
+                </h4>
+                <span class="tw-text-lg tw-text-gray-600">
+                  Blood pressure, heart rate, sleep and glucose trends.
+                </span>
+              </div>
+
+              <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-3">
+                <h4 class="tw-text-xl tw-font-medium">
+                  <i class="bi bi-check-all tw-text-blue-500"></i> Correlation
+                  insights
+                </h4>
+                <span class="tw-text-lg tw-text-gray-600">
+                  Understand patterns instead of guessing.
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. MEDICAL REPORT -->
+        <section
+          class="tw-relative tw-flex tw-w-full tw-flex-col tw-overflow-hidden tw-p-6"
+        >
+          <div
+            class="reveal-up tw-flex tw-min-h-[60vh] tw-place-content-center tw-place-items-center tw-gap-[10%] max-lg:tw-flex-col max-lg:tw-gap-10"
+          >
+            <div class="tw-mt-6 tw-flex tw-max-w-[450px] tw-flex-col tw-gap-4">
+              <h3 class="tw-text-4xl tw-font-bold">
+                Doctor-ready medical reports.
+              </h3>
+
+              <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-3">
+                <h4 class="tw-text-xl tw-font-medium">
+                  <i class="bi bi-check-all tw-text-blue-500"></i> 30-day PDF
+                  summary
+                </h4>
+                <span class="tw-text-lg tw-text-gray-600">
+                  Vitals, symptoms, medications, and observations.
+                </span>
+              </div>
+
+              <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-3">
+                <h4 class="tw-text-xl tw-font-medium">
+                  <i class="bi bi-check-all tw-text-blue-500"></i> Share
+                  instantly
+                </h4>
+                <span class="tw-text-lg tw-text-gray-600">
+                  Send reports before doctor visits.
+                </span>
+              </div>
+            </div>
+            <div class="tw-flex">
+              <div class="tw-h-[450px] tw-w-[300px]">
+                <img
+                  src="./assets/images/medical advice.png"
+                  class="tw-h-full tw-w-full tw-object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. SYMPTOMS LOG -->
+        <section
+          class="tw-relative tw-flex tw-w-full tw-flex-col tw-overflow-hidden tw-p-6"
+        >
+          <div
+            class="reveal-up tw-flex tw-min-h-[60vh] tw-place-content-center tw-place-items-center tw-gap-[10%] max-lg:tw-flex-col max-lg:tw-gap-10"
+          >
+            <div class="tw-flex">
+              <div class="tw-h-[450px] tw-w-[300px]">
+                <img
+                  src="./assets/images/symptoms.png"
+                  class="tw-h-full tw-w-full tw-object-contain"
+                />
+              </div>
+            </div>
+            <div class="tw-mt-6 tw-flex tw-max-w-[450px] tw-flex-col tw-gap-4">
+              <h3 class="tw-text-4xl tw-font-bold">Simple symptom logging.</h3>
+
+              <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-3">
+                <h4 class="tw-text-xl tw-font-medium">
+                  <i class="bi bi-check-all tw-text-blue-500"></i> Quick entries
+                </h4>
+                <span class="tw-text-lg tw-text-gray-600">
+                  Log headaches, fatigue, dizziness and more.
+                </span>
+              </div>
+
+              <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-3">
+                <h4 class="tw-text-xl tw-font-medium">
+                  <i class="bi bi-check-all tw-text-blue-500"></i> Contextual
+                  tracking
+                </h4>
+                <span class="tw-text-lg tw-text-gray-600">
+                  Symptoms linked to vitals and trends.
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. DOCTOR ADVICE -->
+        <section
+          class="tw-relative tw-flex tw-w-full tw-flex-col tw-overflow-hidden tw-p-6"
+        >
+          <div
+            class="reveal-up tw-flex tw-min-h-[60vh] tw-place-content-center tw-place-items-center tw-gap-[10%] max-lg:tw-flex-col max-lg:tw-gap-10"
+          >
+            <div class="tw-mt-6 tw-flex tw-max-w-[450px] tw-flex-col tw-gap-4">
+              <h3 class="tw-text-4xl tw-font-bold">
+                Doctor advice, preserved.
+              </h3>
+
+              <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-3">
+                <h4 class="tw-text-xl tw-font-medium">
+                  <i class="bi bi-check-all tw-text-blue-500"></i> Written &
+                  voice notes
+                </h4>
+                <span class="tw-text-lg tw-text-gray-600">
+                  Never forget instructions again.
+                </span>
+              </div>
+
+              <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-3">
+                <h4 class="tw-text-xl tw-font-medium">
+                  <i class="bi bi-check-all tw-text-blue-500"></i> Follow-up
+                  reminders
+                </h4>
+                <span class="tw-text-lg tw-text-gray-600">
+                  Know exactly when to check again.
+                </span>
+              </div>
+            </div>
+            <div class="tw-flex">
+              <div class="tw-h-[450px] tw-w-[300px]">
+                <img
+                  src="./assets/images/doctor advice.png"
+                  class="tw-h-full tw-w-full tw-object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- <section class="tw-relative tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-6">
+                <div class="reveal-up tw-flex tw-min-h-[300px] tw-w-full tw-place-content-center tw-place-items-center tw-gap-8 tw-rounded-xl tw-p-4 max-lg:tw-flex-col">
+                    <div class="tw-flex tw-h-[450px] tw-w-[350px] tw-flex-col tw-gap-[5%] tw-rounded-xl tw-bg-[#FFD5CA] tw-p-8">
+                        <div class="tw-flex tw-h-[80px] tw-w-[80px] tw-place-content-center tw-items-center tw-rounded-full tw-bg-white">
+                            <i class="material-icons md-40">widgets</i>
+                        </div>
+                        <h3 class="tw-mt-5 tw-text-3xl tw-font-medium">Vitals scattered across apps</h3>
+                        <p class="tw-text-lg">
+                            BP machine, smart ring, lab reports – nothing talks to each other.
+                        </p>
+                    </div>
+
+                    <div class="tw-flex tw-h-[450px] tw-w-[350px] tw-flex-col tw-gap-[5%] tw-rounded-xl tw-bg-primary tw-p-8">
+                        <div class="tw-flex tw-h-[80px] tw-w-[80px] tw-place-content-center tw-items-center tw-rounded-full tw-bg-white">
+                            <i class="material-icons md-40">memory</i>
+                        </div>
+                        <h3 class="tw-mt-5 tw-text-3xl tw-font-medium">Patients forget what doctors say</h3>
+                        <p class="tw-text-lg">
+                            No structured memory of past visits, symptoms, and advice.
+                        </p>
+                    </div>
+
+                    <div class="tw-flex tw-h-[450px] tw-w-[350px] tw-flex-col tw-gap-[5%] tw-rounded-xl tw-bg-[#FFEB99] tw-p-8">
+                        <div class="tw-flex tw-h-[80px] tw-w-[80px] tw-place-content-center tw-items-center tw-rounded-full tw-bg-white">
+                            <i class="material-icons md-40">schedule</i>
+                        </div>
+                        <h3 class="tw-mt-5 tw-text-3xl tw-font-medium">Doctors lack context in 10-minute consults</h3>
+                        <p class="tw-text-lg">
+                            No quick 30-day view of vitals, sleep, and sugar.
+                        </p>
+                    </div>
+                </div>
+            </section> -->
+    <section
+      id="contact"
+      class="tw-relative tw-flex tw-w-full tw-flex-col tw-p-6"
+    >
+      <div
+        class="reveal-up tw-flex tw-min-h-[60vh] tw-place-content-center tw-place-items-center tw-gap-[10%] max-lg:tw-flex-col max-lg:tw-gap-10"
+      >
+        <!-- LEFT: FORM -->
+        <div
+          class="tw-mt-6 tw-flex tw-max-w-[450px] tw-w-full tw-flex-col tw-gap-5"
+        >
+          <h3 class="tw-text-4xl tw-font-bold">Get early access.</h3>
+
+          <p class="tw-text-lg tw-text-gray-600">
+            Leave your details and we’ll notify you when Vitals Vault is ready.
+          </p>
+
+          <form
+            id="waitlistForm"
+            class="waitlist-form tw-mt-4 tw-flex tw-flex-col tw-gap-4"
+          >
+            <!-- NAME -->
+            <div class="tw-flex tw-flex-col tw-gap-1">
+              <label class="tw-text-sm tw-font-medium tw-text-gray-700">
+                Full name
+              </label>
+              <input
+                type="text"
+                name="name"
+                required
+                placeholder="Enter your name"
+                class="tw-rounded-lg tw-border tw-border-gray-300 tw-px-4 tw-py-3 tw-text-lg tw-outline-none focus:tw-border-black"
+              />
+            </div>
+
+            <!-- EMAIL -->
+            <div class="tw-flex tw-flex-col tw-gap-1">
+              <label class="tw-text-sm tw-font-medium tw-text-gray-700">
+                Email address
+              </label>
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="Enter your email"
+                class="tw-rounded-lg tw-border tw-border-gray-300 tw-px-4 tw-py-3 tw-text-lg tw-outline-none focus:tw-border-black"
+              />
+            </div>
+
+            <!-- PHONE -->
+            <div class="tw-flex tw-flex-col tw-gap-1">
+              <label class="tw-text-sm tw-font-medium tw-text-gray-700">
+                Phone number
+              </label>
+              <input
+                type="tel"
+                name="phone"
+                required
+                placeholder="Enter your phone number"
+                class="tw-rounded-lg tw-border tw-border-gray-300 tw-px-4 tw-py-3 tw-text-lg tw-outline-none focus:tw-border-black"
+              />
+            </div>
+
+            <!-- SUBMIT -->
+            <button
+              type="submit"
+              class="tw-mt-2 tw-rounded-lg tw-bg-black tw-py-3 tw-text-lg tw-font-semibold tw-text-white tw-transition hover:tw-bg-blue-700"
+            >
+              Submit
+            </button>
+
+            <!-- SUCCESS MESSAGE -->
+            <p
+              class="tw-hidden tw-text-sm tw-text-green-600 tw-font-medium"
+              data-success
+            >
+              ✅ You’re on the waitlist!
+            </p>
+
+            <span class="tw-text-xs tw-text-gray-500">
+              Your information is kept private.
+            </span>
+          </form>
+        </div>
+
+        <!-- RIGHT: VIDEO -->
+        <div class="tw-flex">
+          <div
+            class="tw-h-[450px] tw-w-[300px] tw-overflow-hidden tw-rounded-xl"
+          >
+            <video
+              src="./assets/images/Red - Vital Vaults (1).mp4"
+              class="tw-h-full tw-w-full tw-object-contain"
+              autoplay
+              muted
+              loop
+              playsinline
+            ></video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      class="tw-mt-auto tw-flex tw-w-full tw-place-content-around tw-gap-3 tw-p-[5%] tw-px-[10%] tw-text-black max-md:tw-flex-col"
+    >
+      <!-- LOGO + OWNERSHIP -->
+      <div
+        class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-place-items-center tw-gap-6 max-md:tw-w-full"
+      >
+        <!-- <img src="./assets/logo.png" alt="logo" class="tw-max-w-[120px]" /> -->
+
+        <div class="tw-text-center tw-text-sm tw-text-gray-700">
+          Owned by <span class="tw-font-semibold">Vitals Vault</span>
+        </div>
+
+        <div class="tw-text-xs tw-text-gray-500">
+          © 2026 All rights reserved
+        </div>
+      </div>
+    </footer>
+    <!-- FLOATING WHATSAPP BUTTON (GUARANTEED VISIBLE) -->
+    <a
+      href="https://wa.me/918108108815?text=Hi"
+      target="_blank"
+      aria-label="Chat with Vitals Vault on WhatsApp"
+      style="
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        width: 64px;
+        height: 64px;
+        background-color: #25d366;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        z-index: 9999;
+      "
+    >
+      <i class="bi bi-whatsapp" style="color: white; font-size: 32px"></i>
+    </a>
+  </body>
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"
+    integrity="sha512-B1lby8cGcAUU3GR+Fd809/ZxgHbfwJMp0jLTVfHiArTuUt++VqSlJpaJvhNtRf3NERaxDNmmxkdx2o+aHd4bvw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"
+    integrity="sha512-AY2+JxnBETJ0wcXnLPCcZJIJx0eimyhz3OJ55k2Jx4RtYC+XdIi2VtJQ+tP3BaTst4otlGG1TtPJ9fKrAUnRdQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+
+  <script src="./index.js"></script>
+
+  <script>
+    document.querySelectorAll(".waitlist-form").forEach((form) => {
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+
+        if (!formData.has("name")) {
+          formData.append("name", "");
+        }
+
+        try {
+          const res = await fetch(
+            "https://script.google.com/macros/s/AKfycbyxu3sOWzG0IFsz0uYgvCRHBKhofkJzY-bn1uMxEj_omETvw4ngw6DtlHUzWlaQ3MHkkg/exec",
+            {
+              method: "POST",
+              body: formData,
+            },
+          );
+
+          if (!res.ok) throw new Error("Request failed");
+
+          form.reset();
+          alert("✅ Added to waitlist!");
+        } catch (err) {
+          console.error(err);
+          alert("❌ Submission failed");
+        }
+      });
+    });
+  </script>
+
+  <style>
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      text-align: center;
+      /* font-size: 12px; */
+      opacity: 1;
+      background: #f7f7f7fa;
+      left: auto;
+    }
+
+    .swiper-pagination-bullet:hover {
+      color: #000;
+      opacity: 1;
+      background: #ede0e0bd;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #f39696 !important;
+    }
+
+    .swiper {
+      padding: 10px !important;
+    }
+  </style>
+
+  <script>
+    const swiper = new Swiper(".swiper", {
+      // Optional parameters
+      direction: "horizontal",
+      loop: true,
+      centeredSlides: true,
+
+      // If we need pagination
+      pagination: {
+        el: ".pagination-container",
+        clickable: true,
+        renderBullet: function (index, className) {
+          return `<span class="${className}"></span>`;
+        },
+      },
+      // Navigation arrows
+      navigation: {
+        nextEl: ".testmonial-next",
+        prevEl: ".testmonial-prev",
+      },
+    });
+  </script>
+</html>
